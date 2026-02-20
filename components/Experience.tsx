@@ -24,7 +24,7 @@ const Experience: React.FC = () => {
       // Feature boxes animation (the 4 boxes)
       gsap.from('.exp-card', {
         y: 30,
-        opacity: 0.5,
+        opacity: 1,
         stagger: 0.1,
         duration: 0.8,
         ease: 'power2.out',

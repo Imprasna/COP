@@ -6,13 +6,14 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const year = new Date().getFullYear();
   return (
     <footer className="bg-alchemist-950 pt-24 pb-12 px-6 lg:px-20 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
           
           {/* Brand Info */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-4 space-y-8">
             <div 
               className="flex items-center gap-3 cursor-pointer"
               onClick={() => onNavigate('home')}
@@ -35,7 +36,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           {/* Contact */}
-          <div className="lg:col-span-3 space-y-8">
+          <div className="lg:col-span-4 space-y-8">
             <h5 className="text-[11px] font-bold tracking-[0.3em] uppercase text-white/60 relative inline-block">
               Contact
               <span className="absolute -left-4 top-1/2 -translate-y-1/2 w-2 h-[1px] bg-gold"></span>
@@ -44,16 +45,16 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <div className="flex items-start gap-4">
                 <span className="text-gold material-symbols-outlined text-[18px]">location</span>
                 <p className="text-white/40 text-sm leading-relaxed">
-                  1288 Noir Avenue, District 1<br />Metropolis, NY 10012
+                  C10, Ravilla Towers, Anna Nagar 3rd Main Rd,<br /> W Block, Anna Nagar, Chennai,<br /> Tamil Nadu - 600040<br />
                 </p>
               </div>
-              <div className="flex items-start gap-4">
-                <span className="text-gold material-symbols-outlined text-[18px]">call</span>
-                <p className="text-white/40 text-sm">+1 (555) 123-4567</p>
+              <div className="flex items-start gap-4 flex items-center">
+                <span className="text-gold material-symbols-outlined text-[18px] mb-0">call</span>
+                <p className="text-white/40 text-sm"><a href="tel:+91 93601 36063" className="mb-0 hover:text-gold transition-colors">+91 93601 36063</a></p>
               </div>
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 flex items-center">
                 <span className="text-gold material-symbols-outlined text-[18px]">mail</span>
-                <p className="text-white/40 text-sm">reservations@luxnoir.com</p>
+                <p className="text-white/40 text-sm"><a href="mailto:copanr2024@gmail.com" className="hover:text-gold transition-colors">copanr2024@gmail.com</a></p>
               </div>
             </div>
           </div>
@@ -67,18 +68,18 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div className="space-y-4">
               <div className="flex justify-between border-b border-white/5 pb-2">
                 <span className="text-white/40 text-sm">Mon - Wed</span>
-                <span className="text-white/60 text-sm font-medium uppercase tracking-tighter">5:00 PM - 12:00 AM</span>
+                <span className="text-white/60 text-sm font-medium uppercase tracking-tighter">11:00 AM - 11:00 PM</span>
               </div>
               <div className="flex justify-between border-b border-white/5 pb-2">
                 <span className="text-white/40 text-sm">Thu - Sat</span>
-                <span className="text-white/60 text-sm font-bold uppercase tracking-tighter">5:00 PM - 2:00 AM</span>
+                <span className="text-white/60 text-sm font-bold uppercase tracking-tighter">11:00 AM - 11:00 PM</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-white/40 text-sm">Sunday</span>
-                <span className="text-white/60 text-sm font-medium uppercase tracking-tighter">4:00 PM - 11:00 PM</span>
+                <span className="text-white/60 text-sm font-medium uppercase tracking-tighter">11:00 AM - 11:00 PM</span>
               </div>
               <div className="pt-4">
-                <a href="#" className="text-gold text-[11px] font-bold uppercase tracking-widest flex items-center gap-2 hover:translate-x-1 transition-transform">
+                <a href="https://maps.app.goo.gl/S9NTXife9CqyJjH38?g_st=ic" className="text-gold text-[11px] font-bold uppercase tracking-widest flex items-center gap-2 hover:translate-x-1 transition-transform">
                   GET DIRECTIONS
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
@@ -89,7 +90,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-white/20 text-[10px] uppercase tracking-widest font-medium">© 2024 Lux Noir Restobar. All rights reserved.</p>
+          <p className="text-white/20 text-[10px] uppercase tracking-widest font-medium">© {year} Chambers of Potions. All rights reserved.</p>
           <div className="flex gap-10 items-center">
             <a href="#" className="text-[10px] uppercase tracking-widest text-white/30 hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="text-[10px] uppercase tracking-widest text-white/30 hover:text-white transition-colors">Terms of Service</a>
