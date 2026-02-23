@@ -27,14 +27,14 @@ const MenuHighlights: React.FC<MenuHighlightsProps> = ({ onSeeFullMenu }) => {
   }, []);
 
   const dishes = [
-    { name: 'Smoked Old Fashioned', price: '$18', desc: 'Bourbon, Angostura, Hickory Smoke, Orange Peel', img: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&q=80&w=500' },
-    { name: 'Truffle Arancini', price: '$14', desc: 'Black Truffle, Aged Parmesan, Risotto, Garlic Aioli', img: 'https://images.unsplash.com/photo-1541014741259-df549fa3bb68?auto=format&fit=crop&q=80&w=500' },
-    { name: 'Wagyu Sliders', price: '$22', desc: 'Wagyu Beef, Brioche Bun, Caramelized Onion, Aioli', img: 'https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&q=80&w=500' },
-    { name: 'Fresh Oysters', price: '$24', desc: 'Half Dozen, Mignonette, Lemon, Hot Sauce', img: 'https://images.unsplash.com/photo-1534604973900-c41ab4c3c3c0?auto=format&fit=crop&q=80&w=500' },
+    { name: 'Wine & Cheese Platter (Premium)', price: '₹799', desc: 'Aged cheeses, cured meats, wine pairings, artisanal crackers', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&q=80&w=500' },
+    { name: 'Butter Chicken Masala', price: '₹549', desc: 'Tender chicken in creamy tomato-butter sauce with aromatic spices', img: 'https://images.unsplash.com/photo-1565557623814-695d8edf5b0b?auto=format&fit=crop&q=80&w=500' },
+    { name: 'Gamberoni Alla Marinara (Prawn Pizza)', price: '₹599', desc: 'Fresh prawns, garlic, tomato sauce, basil & mozzarella', img: 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&q=80&w=500' },
+    { name: 'Old Fashioned Tiramisu', price: '₹449', desc: 'Classic Italian dessert with espresso, mascarpone & cocoa', img: 'https://images.unsplash.com/photo-1571877227200-c0gae3a37be?auto=format&fit=crop&q=80&w=500' },
   ];
 
   return (
-    <section ref={containerRef} className="py-24 px-6 lg:px-20 bg-alchemist-900 overflow-hidden">
+    <section ref={containerRef} className="py-24 px-6 lg:px-20 bg-[#1A4228] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
@@ -43,7 +43,7 @@ const MenuHighlights: React.FC<MenuHighlightsProps> = ({ onSeeFullMenu }) => {
           </div>
           <button 
             onClick={onSeeFullMenu}
-            className="flex items-center gap-2 group text-white/70 hover:text-gold transition-colors font-medium text-sm tracking-wider uppercase"
+            className="flex items-center gap-2 group text-white/70 hover:text-white transition-colors font-medium text-sm tracking-wider uppercase"
           >
             View Full Menu
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>

@@ -19,9 +19,10 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               onClick={() => onNavigate('home')}
             >
               <div className="text-gold">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12l-2 18H8L6 3z"/><path d="M12 3v18"/></svg>
+                <img src="/logo.png" alt="Chambers of Potions Logo" width="184" />
+                {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12l-2 18H8L6 3z"/><path d="M12 3v18"/></svg> */}
               </div>
-              <h2 className="text-2xl font-bold tracking-[0.1em] text-white uppercase font-heading">LUX NOIR</h2>
+              {/* <h2 className="text-2xl font-bold tracking-[0.1em] text-white uppercase font-heading">Chambers of Potions</h2> */}
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-sm font-light">
               Where shadows meet brilliance. Experience the finest culinary arts in an atmosphere of mysterious elegance.

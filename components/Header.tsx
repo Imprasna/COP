@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react';
 
 interface HeaderProps {
-  currentPage: 'home' | 'menu' | 'gallery';
-  onNavigate: (page: 'home' | 'menu' | 'gallery') => void;
+  currentPage: 'home' | 'menu' | 'gallery' | 'reservations' | 'contact';
+  onNavigate: (page: 'home' | 'menu' | 'gallery' | 'reservations' | 'contact') => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
@@ -37,43 +37,41 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
     { name: 'Home', id: 'home' as const },
     { name: 'Menu', id: 'menu' as const },
     { name: 'Gallery', id: 'gallery' as const },
-    { name: 'Reservations', id: 'reservations' },
-    { name: 'Contact', id: 'contact' },
+    { name: 'Reservations', id: 'reservations' as const },
+    { name: 'Contact', id: 'contact' as const },
   ];
 
   const handleNavClick = (id: string) => {
-    if (id === 'home' || id === 'menu' || id === 'gallery') {
+    if (id === 'home' || id === 'menu' || id === 'gallery' || id === 'reservations' || id === 'contact') {
       onNavigate(id as any);
     }
     setIsMenuOpen(false);
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 py-6 px-6 lg:px-20 flex items-center justify-between ${
-        scrolled ? 'bg-alchemist-950/90 backdrop-blur-xl py-4 shadow-2xl' : 'bg-transparent'
-      }`}
+    <header
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 py-6 px-6 lg:px-20 flex items-center justify-between ${scrolled ? 'bg-alchemist-950/90 backdrop-blur-xl py-4 shadow-2xl' : 'bg-transparent'
+        }`}
     >
       {/* Brand Identity */}
-      <div 
+      <div
         className="flex items-center gap-3 group cursor-pointer z-[110]"
         onClick={() => { onNavigate('home'); setIsMenuOpen(false); }}
       >
         <div className="text-gold transition-transform duration-500 group-hover:rotate-[360deg] scale-110">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12l-2 18H8L6 3z"/><path d="M12 3v18"/></svg>
+          <img src="/logo.png" alt="Chambers of Potions Logo" width="84" />
         </div>
-        <h1 className="text-xl font-bold tracking-[0.1em] text-white uppercase font-heading">LUX NOIR</h1>
+        {/* <h1 className="text-xl font-bold tracking-[0.1em] text-white uppercase font-heading">Chambers of Potions</h1> */}
       </div>
 
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex items-center gap-10">
         {navItems.map((item) => (
-          <button 
-            key={item.name} 
+          <button
+            key={item.name}
             onClick={() => handleNavClick(item.id)}
-            className={`text-[13px] font-semibold tracking-widest uppercase transition-all relative group ${
-              currentPage === item.id ? 'text-white' : 'text-white/50 hover:text-white'
-            }`}
+            className={`text-[13px] font-semibold tracking-widest uppercase transition-all relative group ${currentPage === item.id ? 'text-white' : 'text-white/50 hover:text-white'
+              }`}
           >
             {item.name}
             {currentPage === item.id && <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-gold"></span>}
@@ -83,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
       </nav>
 
       {/* Desktop Booking Button */}
-      <button 
+      <button
         onClick={() => onNavigate('menu')}
         className="hidden lg:block bg-gold hover:bg-gold-light text-alchemist-950 px-7 py-2.5 rounded-[4px] text-xs font-bold uppercase tracking-widest transition-all active:scale-95 shadow-lg shadow-gold/5 hover:-translate-y-0.5"
       >
@@ -91,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
       </button>
 
       {/* Mobile Hamburger Control */}
-      <button 
+      <button
         className="lg:hidden text-white z-[110] p-3 focus:outline-none transition-colors active:bg-white/10 rounded-full"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -105,10 +103,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
       </button>
 
       {/* Full-Screen Mobile Menu Overlay */}
-      <div 
-        className={`lg:hidden fixed inset-0 z-[105] w-full h-screen bg-alchemist-950 overflow-hidden flex flex-col items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
-          isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'
-        }`}
+      <div
+        className={`lg:hidden fixed inset-0 z-[105] w-full h-screen bg-alchemist-950 overflow-hidden flex flex-col items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'
+          }`}
       >
         {/* Dynamic Background Accents */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
@@ -118,15 +115,13 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
         <nav className="relative z-10 flex flex-col items-center gap-8 md:gap-12 w-full max-w-sm px-8">
           {navItems.map((item, index) => (
-            <button 
-              key={item.name} 
+            <button
+              key={item.name}
               onClick={() => handleNavClick(item.id)}
               style={{ transitionDelay: `${index * 80 + 200}ms` }}
-              className={`text-3xl md:text-4xl font-black tracking-[0.2em] uppercase transition-all duration-700 ${
-                isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
-              } ${
-                currentPage === item.id ? 'text-gold' : 'text-white/60 active:text-gold active:scale-95'
-              }`}
+              className={`text-3xl md:text-4xl font-black tracking-[0.2em] uppercase transition-all duration-700 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+                } ${currentPage === item.id ? 'text-gold' : 'text-white/60 active:text-gold active:scale-95'
+                }`}
             >
               {item.name}
               {currentPage === item.id && (
@@ -134,23 +129,21 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               )}
             </button>
           ))}
-          
-          <button 
+
+          <button
             onClick={() => handleNavClick('menu')}
             style={{ transitionDelay: `${navItems.length * 80 + 300}ms` }}
-            className={`mt-6 w-full bg-gold text-alchemist-950 py-5 rounded-[4px] text-sm font-black uppercase tracking-[0.3em] transition-all duration-700 shadow-2xl shadow-gold/20 active:scale-95 ${
-              isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
-            }`}
+            className={`mt-6 w-full bg-gold text-alchemist-950 py-5 rounded-[4px] text-sm font-black uppercase tracking-[0.3em] transition-all duration-700 shadow-2xl shadow-gold/20 active:scale-95 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+              }`}
           >
             Plan a Visit
           </button>
         </nav>
 
         {/* Mobile Overlay Footer */}
-        <div 
-          className={`absolute bottom-10 left-0 w-full px-6 transition-all duration-1000 delay-700 ${
-            isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
+        <div
+          className={`absolute bottom-10 left-0 w-full px-6 transition-all duration-1000 delay-700 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
         >
           <div className="flex flex-col items-center gap-6">
             <div className="w-12 h-[1px] bg-white/10"></div>

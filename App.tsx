@@ -10,12 +10,13 @@ import MenuHighlights from './components/MenuHighlights';
 import Reservations from './components/Reservations';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App: React.FC = () => {
   const mainRef = useRef<HTMLDivElement>(null);
-  const [currentPage, setCurrentPage] = useState<'home' | 'menu' | 'gallery'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'menu' | 'gallery' | 'reservations' | 'contact'>('home');
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -32,7 +33,7 @@ const App: React.FC = () => {
     return () => ctx.revert();
   }, [currentPage]);
 
-  const navigateTo = (page: 'home' | 'menu' | 'gallery') => {
+  const navigateTo = (page: 'home' | 'menu' | 'gallery' | 'reservations' | 'contact') => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setCurrentPage(page);
   };
@@ -43,8 +44,8 @@ const App: React.FC = () => {
       <main>
         {currentPage === 'home' && (
           <>
-            <Hero 
-              title="Sip into the Shadows" 
+            <Hero
+              title="Sip into the Shadows"
               subtitle="An intimate dining experience where deep charcoal meets champagne gold in the heart of the city."
             />
             <Experience />
@@ -53,8 +54,8 @@ const App: React.FC = () => {
         )}
         {currentPage === 'menu' && (
           <>
-            <Hero 
-              title="Curated Tastes" 
+            <Hero
+              title="Curated Tastes"
               subtitle="Experience mixology as an art form. From smoked infusions to gold-dusted classics, every sip tells a story."
             />
             <MenuList />
@@ -63,6 +64,14 @@ const App: React.FC = () => {
         )}
         {currentPage === 'gallery' && (
           <Gallery />
+        )}
+        {currentPage === 'reservations' && (
+          <div className="pt-20">
+            <Reservations />
+          </div>
+        )}
+        {currentPage === 'contact' && (
+          <Contact />
         )}
       </main>
       <Footer onNavigate={navigateTo} />
