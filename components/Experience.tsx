@@ -111,7 +111,7 @@ const Experience: React.FC = () => {
         {/* Bottom Visual Highlights Row */}
         <div className="visual-cards-grid grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {/* Card 1: Main Lounge */}
-          <div className="visual-card relative rounded-2xl overflow-hidden group cursor-pointer h-[400px] md:h-[500px]">
+          <div className="visual-card relative rounded-2xl overflow-hidden group cursor-pointer h-[400px] md:h-[500px]" style={{ clipPath: 'polygon(25% 0%, 100% 0, 100% 50%, 75% 100%, 0 100%, 0% 50%)', overflow: 'hidden' }}>
             <img 
               src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=800" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
@@ -125,7 +125,7 @@ const Experience: React.FC = () => {
           </div>
 
           {/* Card 2: Signature Sips */}
-          <div className="visual-card relative rounded-2xl overflow-hidden group cursor-pointer h-[400px] md:h-[500px]">
+          <div className="visual-card relative rounded-2xl overflow-hidden group cursor-pointer h-[400px] md:h-[500px]" style={{ clipPath: 'polygon(25% 0%, 100% 0, 100% 50%, 75% 100%, 0 100%, 0% 50%)', overflow: 'hidden' }}>
             <img 
               src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=600" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
@@ -138,7 +138,7 @@ const Experience: React.FC = () => {
           </div>
 
           {/* Card 3: The Bar */}
-          <div className="visual-card relative rounded-2xl overflow-hidden group cursor-pointer h-[400px] md:h-[500px]">
+          <div className="visual-card relative rounded-2xl overflow-hidden group cursor-pointer h-[400px] md:h-[500px]" style={{ clipPath: 'polygon(25% 0%, 100% 0, 100% 50%, 75% 100%, 0 100%, 0% 50%)', overflow: 'hidden' }}>
             <img 
               src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=600" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 

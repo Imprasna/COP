@@ -457,7 +457,7 @@ const MenuList: React.FC = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       // Reveal columns on mount/category change
-      gsap.fromTo('.menu-column', 
+      gsap.fromTo('.menu-column',
         { opacity: 0, y: 30 },
         {
           opacity: 1,
@@ -474,7 +474,7 @@ const MenuList: React.FC = () => {
 
   const handleCategoryChange = (cat: string) => {
     if (cat === activeCategory) return;
-    
+
     // Quick exit animation
     gsap.to('.menu-column', {
       opacity: 0,
@@ -489,16 +489,15 @@ const MenuList: React.FC = () => {
   return (
     <section ref={sectionRef} className="py-20 px-6 lg:px-20 bg-alchemist-950">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* Category Tabs */}
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 mb-20 border-b border-white/5">
           {['PAIRING & FUSION PLATES', 'TANDOOR & KEBABS', 'SMALL PLATES (NON-VEG)', 'SMALL PLATES (VEG)', 'PIZZA & PASTA', 'MAIN COURSE (NON-VEG)', 'MAIN COURSE (VEG)', 'BURGERS & HANDHELDS', 'RICE & BREADS', 'SWEET TOOTH'].map((cat) => (
             <button
               key={cat}
               onClick={() => handleCategoryChange(cat)}
-              className={`pb-6 text-[10px] md:text-[11px] font-bold tracking-[0.15em] transition-all relative group whitespace-nowrap ${
-                activeCategory === cat ? 'text-white' : 'text-white/40 hover:text-white'
-              }`}
+              className={`pb-6 text-[10px] md:text-[11px] font-bold tracking-[0.15em] transition-all relative group whitespace-nowrap ${activeCategory === cat ? 'text-white' : 'text-white/40 hover:text-white'
+                }`}
             >
               {cat}
               {activeCategory === cat && (
@@ -558,14 +557,22 @@ const MenuList: React.FC = () => {
         </div>
 
         {/* View Full Menu CTA */}
-        <div className="flex justify-center pt-10">
+        <div className="flex justify-center pt-10 gap-4">
           <button className="flex items-center gap-3 px-10 py-4 rounded-full border border-white/10 hover:border-gold/50 transition-all text-sm font-bold tracking-widest uppercase text-white/70 hover:text-white group">
-            View Full Menu PDF
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-          </button>
-        </div>
+            <a target="_blank" className="flex items-center gap-2 m-0" rel="noopener noreferrer" href="https://drive.google.com/file/d/1l2cVfYwKNu9jXtSQDwoN-bDO3oDz5wx1/view?usp=sharing">
+            View Liquor Menu
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
+          </a>
+        </button>
+          <button className="flex items-center gap-3 px-10 py-4 rounded-full border border-white/10 hover:border-gold/50 transition-all text-sm font-bold tracking-widest uppercase text-white/70 hover:text-white group">
+            <a target="_blank" className="flex items-center gap-2 m-0" rel="noopener noreferrer" href="https://drive.google.com/file/d/1j6iCllNpbXk1sp3THqnneoEg96LZD1o6/view?usp=sharing">
+            View Food Menu
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
+          </a>
+        </button>
       </div>
-    </section>
+    </div>
+    </section >
   );
 };
 

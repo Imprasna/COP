@@ -1,80 +1,95 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lux Noir | Visual Chronicles</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lux Noir | Visual Chronicles</title>
 
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 
-    <!-- Android / Chrome -->
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:wght@300;400;500;600;700;800;900&family=Archivo+Black&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              alchemist: {
-                950: '#0a0a09',
-                900: '#121210',
-                800: '#1a1a17',
-                700: '#262621',
-              },
-              gold: {
-                DEFAULT: '#1A4228',
-                light: '#f1d279',
-                dark: '#b08d2b',
-              }
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- Android / Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:wght@300;400;500;600;700;800;900&family=Archivo+Black&display=swap" rel="stylesheet">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"> -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alchemist: {
+              950: '#0a0a09',
+              900: '#121210',
+              800: '#1a1a17',
+              700: '#262621',
             },
-            fontFamily: {
-              sans: ['Work Sans', 'sans-serif'],
-              display: ['Playfair Display', 'serif'],
-              heading: ['Archivo Black', 'sans-serif'],
+            gold: {
+              DEFAULT: '#1A4228',
+              light: '#f1d279',
+              dark: '#b08d2b',
             }
+          },
+          fontFamily: {
+            sans: ['Work Sans', 'sans-serif',],
+            display: ['Playfair Display', 'serif'],
+            heading: ['Archivo Black', 'sans-serif'],
           }
         }
       }
-    </script>
-    <style>
-      body {
-        background-color: #0a0a09;
-        color: white;
-        scroll-behavior: smooth;
-      }
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .hide-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0a0a09;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #262621;
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #d4af37;
-      }
-    </style>
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0a0a09;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    .titleelement {
+      /* font-family: "UnifrakturMaguntia", cursive; */
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a09;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #262621;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -86,10 +101,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
+
+<body>
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
