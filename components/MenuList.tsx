@@ -570,7 +570,7 @@ const MenuList: React.FC = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1S-K0BL7SgWaM-PpeuyWZWKp2HHZfM_vv/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1j6iCllNpbXk1sp3THqnneoEg96LZD1o6/view?usp=sharing"
             className="flex items-center gap-3 px-6 py-3 md:px-10 md:py-4 rounded-full border border-white/10 hover:border-gold/50 transition-all text-sm font-bold tracking-widest uppercase text-white/70 hover:text-white group w-full sm:w-auto justify-center text-center"
           >
             View Food Menu
