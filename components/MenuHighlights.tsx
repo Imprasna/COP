@@ -2,7 +2,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y } from 'swiper';
+import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -63,7 +63,7 @@ const MenuHighlights: React.FC<MenuHighlightsProps> = ({ onSeeFullMenu }) => {
         </div>
 
         <Swiper
-          modules={[Navigation, A11y]}
+          modules={[Navigation, A11y, Autoplay]}
           navigation={false}
           pagination={{ clickable: false }}
           spaceBetween={10}
