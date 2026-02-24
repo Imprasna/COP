@@ -557,20 +557,26 @@ const MenuList: React.FC = () => {
         </div>
 
         {/* View Full Menu CTA */}
-        <div className="flex justify-center pt-10 gap-4">
-          <button className="flex items-center gap-3 px-10 py-4 rounded-full border border-white/10 hover:border-gold/50 transition-all text-sm font-bold tracking-widest uppercase text-white/70 hover:text-white group">
-            <a target="_blank" className="flex items-center gap-2 m-0" rel="noopener noreferrer" href="https://drive.google.com/file/d/1l2cVfYwKNu9jXtSQDwoN-bDO3oDz5wx1/view?usp=sharing">
+        <div className="flex flex-col sm:flex-row justify-center pt-10 gap-4 px-4 max-w-3xl mx-auto w-full">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://drive.google.com/file/d/1l2cVfYwKNu9jXtSQDwoN-bDO3oDz5wx1/view?usp=sharing"
+            className="flex items-center gap-3 px-6 py-3 md:px-10 md:py-4 rounded-full border border-white/10 hover:border-gold/50 transition-all text-sm font-bold tracking-widest uppercase text-white/70 hover:text-white group w-full sm:w-auto justify-center text-center"
+          >
             View Liquor Menu
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
           </a>
-        </button>
-          <button className="flex items-center gap-3 px-10 py-4 rounded-full border border-white/10 hover:border-gold/50 transition-all text-sm font-bold tracking-widest uppercase text-white/70 hover:text-white group">
-            <a target="_blank" className="flex items-center gap-2 m-0" rel="noopener noreferrer" href="https://drive.google.com/file/d/1j6iCllNpbXk1sp3THqnneoEg96LZD1o6/view?usp=sharing">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://drive.google.com/file/d/1j6iCllNpbXk1sp3THqnneoEg96LZD1o6/view?usp=sharing"
+            className="flex items-center gap-3 px-6 py-3 md:px-10 md:py-4 rounded-full border border-white/10 hover:border-gold/50 transition-all text-sm font-bold tracking-widest uppercase text-white/70 hover:text-white group w-full sm:w-auto justify-center text-center"
+          >
             View Food Menu
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
           </a>
-        </button>
-      </div>
+        </div>
     </div>
     </section >
   );
