@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
         {/* Contact Information */}
         <div className="space-y-12">
           <div className="contact-reveal space-y-6">
-            <span className="text-gold uppercase tracking-[0.4em] font-bold text-[11px] block">GET IN TOUCH</span>
+            <span className="text-white uppercase tracking-[0.4em] font-bold text-[11px] block">GET IN TOUCH</span>
             <h2 className="text-5xl md:text-7xl font-black text-white font-display tracking-tight leading-none">Let's Create Magic</h2>
             <p className="text-white/50 text-lg max-w-lg font-light leading-relaxed">
               Whether you're looking for a private event, a special celebration, or just want to say hello, we're here to listen.
@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
               ></textarea>
             </div>
 
-            <button className="w-full bg-gold hover:bg-gold-light text-alchemist-950 font-bold text-sm tracking-[0.2em] uppercase py-5 rounded-xl shadow-2xl shadow-gold/10 transition-all active:scale-[0.98] flex items-center justify-center gap-3">
+            <button className="w-full bg-gold hover:bg-white text-alchemist-950 hover:text-black font-bold text-sm tracking-[0.2em] uppercase py-5 rounded-xl shadow-2xl shadow-gold/10 transition-all active:scale-[0.98] flex items-center justify-center gap-3">
               Send Message
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
             </button>

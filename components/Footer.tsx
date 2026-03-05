@@ -2,7 +2,7 @@
 import React from 'react';
 
 interface FooterProps {
-  onNavigate: (page: 'home' | 'menu' | 'gallery') => void;
+  onNavigate: (page: 'home' | 'menu' | 'gallery' | 'reservations' | 'contact' | 'reviews') => void;
 }
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {

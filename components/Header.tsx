@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react';
 
 interface HeaderProps {
-  currentPage: 'home' | 'menu' | 'gallery' | 'reservations' | 'contact';
-  onNavigate: (page: 'home' | 'menu' | 'gallery' | 'reservations' | 'contact') => void;
+  currentPage: 'home' | 'menu' | 'gallery' | 'reviews' | 'contact';
+  onNavigate: (page: 'home' | 'menu' | 'gallery' | 'reviews' | 'contact') => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
@@ -37,12 +37,12 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
     { name: 'Home', id: 'home' as const },
     { name: 'Menu', id: 'menu' as const },
     { name: 'Gallery', id: 'gallery' as const },
-    { name: 'Reservations', id: 'reservations' as const },
+    { name: 'Reviews', id: 'reviews' as const },
     { name: 'Contact', id: 'contact' as const },
   ];
 
   const handleNavClick = (id: string) => {
-    if (id === 'home' || id === 'menu' || id === 'gallery' || id === 'reservations' || id === 'contact') {
+    if (id === 'home' || id === 'menu' || id === 'gallery' || id === 'reviews' || id === 'contact') {
       onNavigate(id as any);
     }
     setIsMenuOpen(false);
@@ -83,7 +83,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
       {/* Desktop Booking Button */}
       <button
         onClick={() => onNavigate('menu')}
-        className="hidden lg:block bg-gold hover:bg-gold-light text-alchemist-950 px-7 py-2.5 rounded-[4px] text-xs font-bold uppercase tracking-widest transition-all active:scale-95 shadow-lg shadow-gold/5 hover:-translate-y-0.5"
+        className="hidden lg:block bg-gold hover:bg-primary text-white hover:text-yellow-300 px-7 py-2.5 rounded-[4px] text-xs font-bold uppercase tracking-widest transition-all active:scale-95 shadow-lg shadow-gold/5 hover:-translate-y-0.5"
       >
         Plan a Visit
       </button>
@@ -119,7 +119,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               key={item.name}
               onClick={() => handleNavClick(item.id)}
               style={{ transitionDelay: `${index * 80 + 200}ms` }}
-              className={`text-3xl md:text-4xl font-black tracking-[0.2em] uppercase transition-all duration-700 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+              className={`text-3xl md:text-4xl font-white tracking-[0.2em] uppercase transition-all duration-700 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
                 } ${currentPage === item.id ? 'text-gold' : 'text-white/60 active:text-gold active:scale-95'
                 }`}
             >
@@ -133,7 +133,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           <button
             onClick={() => handleNavClick('menu')}
             style={{ transitionDelay: `${navItems.length * 80 + 300}ms` }}
-            className={`mt-6 w-full bg-gold text-alchemist-950 py-5 rounded-[4px] text-sm font-black uppercase tracking-[0.3em] transition-all duration-700 shadow-2xl shadow-gold/20 active:scale-95 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+            className={`mt-6 w-full bg-gold text-white py-5 rounded-[4px] text-sm font-white uppercase tracking-[0.3em] transition-all duration-700 shadow-2xl shadow-gold/20 active:scale-95 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
               }`}
           >
             Plan a Visit

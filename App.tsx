@@ -1,5 +1,5 @@
 
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Header from './components/Header';
@@ -11,12 +11,22 @@ import Reservations from './components/Reservations';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import Reviews from './components/Reviews';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App: React.FC = () => {
   const mainRef = useRef<HTMLDivElement>(null);
-  const [currentPage, setCurrentPage] = useState<'home' | 'menu' | 'gallery' | 'reservations' | 'contact'>('home');
+  type Page = 'home' | 'menu' | 'gallery' | 'reservations' | 'contact' | 'reviews';
+
+  const getPageFromPath = (): Page => {
+    if (typeof window === 'undefined') return 'home';
+    const raw = window.location.pathname.replace(/^\/+|\/+$/g, '');
+    const allowed: Page[] = ['home', 'menu', 'gallery', 'reservations', 'contact', 'reviews'];
+    return (allowed.includes(raw as Page) ? (raw as Page) : 'home');
+  };
+
+  const [currentPage, setCurrentPage] = useState<Page>(getPageFromPath);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -33,10 +43,25 @@ const App: React.FC = () => {
     return () => ctx.revert();
   }, [currentPage]);
 
-  const navigateTo = (page: 'home' | 'menu' | 'gallery' | 'reservations' | 'contact') => {
+  const navigateTo = (page: Page) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      const newPath = `/${page}`;
+      if (window.location.pathname !== newPath) {
+        window.history.pushState({}, '', newPath);
+      }
+    } catch (e) {
+      // ignore in non-browser environments
+    }
     setCurrentPage(page);
   };
+
+  // sync with browser navigation (back/forward)
+  useEffect(() => {
+    const onPop = () => setCurrentPage(getPageFromPath());
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   return (
     <div ref={mainRef} className="bg-alchemist-950 font-sans min-h-screen selection:bg-gold selection:text-alchemist-950">
@@ -59,15 +84,15 @@ const App: React.FC = () => {
               subtitle="Experience mixology as an art form. From smoked infusions to gold-dusted classics, every sip tells a story."
             />
             <MenuList />
-            <Reservations />
+            {/* <Reservations /> */}
           </>
         )}
         {currentPage === 'gallery' && (
           <Gallery />
         )}
-        {currentPage === 'reservations' && (
+        {currentPage === 'reviews' && (
           <div className="pt-20">
-            <Reservations />
+            <Reviews />
           </div>
         )}
         {currentPage === 'contact' && (
