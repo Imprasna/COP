@@ -152,7 +152,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                 <a key={s} href="#" className="text-[10px] font-bold text-white/30 hover:text-gold uppercase tracking-[0.2em] transition-colors">{s}</a>
               ))}
             </div>
-            <p className="text-white/20 text-[9px] uppercase tracking-[0.4em] font-medium">© 2024 Lux Noir Restobar</p>
+            <p className="text-white/20 text-[9px] uppercase tracking-[0.4em] font-medium">© 2024 Chambers of Potions</p>
           </div>
         </div>
       </div>
