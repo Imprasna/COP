@@ -12,6 +12,8 @@ import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import Reviews from './components/Reviews';
+import { AnimatePresence, motion } from 'motion/react';
+import Preloader from './components/Preloader';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +29,7 @@ const App: React.FC = () => {
   };
 
   const [currentPage, setCurrentPage] = useState<Page>(getPageFromPath);
+  const [loading, setLoading] = useState(true);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -65,41 +68,57 @@ const App: React.FC = () => {
 
   return (
     <div ref={mainRef} className="bg-alchemist-950 font-sans min-h-screen selection:bg-gold selection:text-alchemist-950">
-      <Header currentPage={currentPage} onNavigate={navigateTo} />
-      <main>
-        {currentPage === 'home' && (
+      <AnimatePresence mode="wait">
+        {loading ? (
+          <Preloader key="preloader" onComplete={() => setLoading(false)} />
+        ) : (
           <>
-            <Hero
-              title="Sip into the Shadows"
-              subtitle="An intimate dining experience where deep charcoal meets champagne gold in the heart of the city."
-            />
-            <Experience />
-            <MenuHighlights onSeeFullMenu={() => navigateTo('menu')} />
+            <motion.div
+              key="content"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2 }}
+              className="relative"
+            >
+          <Header currentPage={currentPage} onNavigate={navigateTo} />
+          <main>
+            {currentPage === 'home' && (
+              <>
+                <Hero
+                  title="Sip into the Shadows"
+                  subtitle="An intimate dining experience where deep charcoal meets champagne gold in the heart of the city."
+                />
+                <Experience />
+                <MenuHighlights onSeeFullMenu={() => navigateTo('menu')} />
+              </>
+            )}
+            {currentPage === 'menu' && (
+              <>
+                <Hero
+                  title="Curated Tastes"
+                  subtitle="Experience mixology as an art form. From smoked infusions to gold-dusted classics, every sip tells a story."
+                />
+                <MenuList />
+                {/* <Reservations /> */}
+              </>
+            )}
+            {currentPage === 'gallery' && (
+              <Gallery />
+            )}
+            {currentPage === 'reviews' && (
+              <div className="pt-20">
+                <Reviews />
+              </div>
+            )}
+            {currentPage === 'contact' && (
+              <Contact />
+            )}
+          </main>
+          <Footer onNavigate={navigateTo} />
+          </motion.div>
           </>
         )}
-        {currentPage === 'menu' && (
-          <>
-            <Hero
-              title="Curated Tastes"
-              subtitle="Experience mixology as an art form. From smoked infusions to gold-dusted classics, every sip tells a story."
-            />
-            <MenuList />
-            {/* <Reservations /> */}
-          </>
-        )}
-        {currentPage === 'gallery' && (
-          <Gallery />
-        )}
-        {currentPage === 'reviews' && (
-          <div className="pt-20">
-            <Reviews />
-          </div>
-        )}
-        {currentPage === 'contact' && (
-          <Contact />
-        )}
-      </main>
-      <Footer onNavigate={navigateTo} />
+      </AnimatePresence>
     </div>
   );
 };
