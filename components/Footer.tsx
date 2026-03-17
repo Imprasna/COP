@@ -55,7 +55,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </div>
               <div className="flex items-start gap-4 flex items-center">
                 <span className="text-gold material-symbols-outlined text-[18px]">mail</span>
-                <p className="text-white/40 text-sm"><a href="mailto:copanr2024@gmail.com" className="hover:text-gold transition-colors">copanr2024@gmail.com</a></p>
+                <p className="text-white/40 text-sm"><a href="mailto:copanr2025@gmail.com" className="hover:text-gold transition-colors">copanr2025@gmail.com</a></p>
               </div>
             </div>
           </div>

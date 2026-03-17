@@ -47,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
       </div>
 
       <div className="hero-content relative z-10 text-center max-w-3xl mx-auto px-6 pt-20">
-        <span className="text-gold uppercase tracking-[0.5em] font-bold text-[11px] mb-6 block">EST. 2024</span>
+        <span className="text-gold uppercase tracking-[0.5em] font-bold text-[11px] mb-6 block">EST. 2025</span>
         <h2 className="text-5xl md:text-8xl font-black text-white leading-tight tracking-tight font-heading uppercase mb-8 titleelement">
           {title}
         </h2>

@@ -76,7 +76,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                         />
                     </div>
                     <div className="mt-6 flex justify-between items-center font-serif text-[20px] uppercase tracking-[0.3em] text-noir-gold/40">
-                        <span>Est. 2024</span>
+                        <span>Est. 2025</span>
                         <span>{progress}%</span>
                     </div>
                 </div>
