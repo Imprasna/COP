@@ -43,13 +43,14 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                     <div className="relative flex items-center justify-center w-64 h-64 md:w-80 md:h-80 animate-gold-glow">
                         <div className="border border-noir-gold/30 rounded-full w-full h-full flex items-center justify-center p-8">
                             <div className="text-center">
-                                <h1 className="text-noir-gold font-serif tracking-[0.3em] uppercase text-3xl md:text-4xl mb-1">
+                                <img src="/logo.png" alt="Logo" width={250} className="mx-auto mb-4" />
+                                {/* <h1 className="text-noir-gold font-serif tracking-[0.3em] uppercase text-3xl md:text-4xl mb-1">
                                     Chambers
-                                </h1>
-                                <div className="w-16 h-[1px] bg-noir-gold/40 mx-auto my-4" />
+                                </h1> */}
+                                {/* <div className="w-16 h-[1px] bg-noir-gold/40 mx-auto my-4" />
                                 <p className="text-noir-gold-light/80 text-xs md:text-sm tracking-[0.5em] uppercase font-light">
                                     of Potions
-                                </p>
+                                </p> */}
                             </div>
                         </div>
                     </div>
