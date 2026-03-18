@@ -1,6 +1,7 @@
 
 import React, { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
+import LazyImage from './LazyImage';
 
 type GalleryItemType = 'image' | 'social' | 'review';
 
@@ -24,26 +25,24 @@ const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
+  // Load all images from /assets/gallery using Vite's import.meta.glob
+  // Note: Vite will return URLs when using { as: 'url', eager: true }
+  const imageModules = import.meta.glob('/assets/gallery/*.{webp,png,jpg,jpeg}', { as: 'url', eager: true }) as Record<string, string>;
+  const imageSrcs = Object.values(imageModules);
+
   const galleryItems: GalleryItem[] = [
-    { id: 1, type: 'image', category: 'CULINARY ART', src: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1200', span: 1 },
-    { id: 2, type: 'social', content: 'TAG US', span: 1 },
-    { id: 3, type: 'image', category: 'INTERIORS', src: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=1200', span: 1 },
-    { id: 4, type: 'image', category: 'INTERIORS', src: 'https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=1200', span: 1, featured: true },
-    { id: 5, type: 'image', category: 'SOCIAL EVENTS', src: 'https://images.unsplash.com/photo-1544145945-f904253d0c7b?auto=format&fit=crop&q=80&w=1200', span: 1 },
-    { id: 6, type: 'image', category: 'CULINARY ART', src: 'https://images.unsplash.com/photo-1534604973900-c41ab4c3c3c0?auto=format&fit=crop&q=80&w=1200', span: 1 },
-    { id: 7, type: 'image', category: 'SOCIAL EVENTS', src: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=1200', span: 1 },
-    { id: 8, type: 'image', category: 'INTERIORS', src: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=1200', span: 1 },
-    { 
-      id: 9, 
-      type: 'review', 
+    // map filesystem images first
+    ...imageSrcs.map((src, idx) => ({ id: 1000 + idx, type: 'image' as GalleryItemType, src, span: 1 })),
+    // keep social and review blocks
+    { id: 1, type: 'social', content: 'TAG US', span: 1 },
+    {
+      id: 2,
+      type: 'review',
       quote: '"An absolute masterpiece of design and flavor. The atmosphere is unmatched in the city."',
       author: 'JAMES D.',
       role: 'FOOD CRITIC',
       avatar: 'https://i.pravatar.cc/100?u=james'
-    },
-    { id: 10, type: 'image', category: 'CULINARY ART', src: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=1200', span: 1 },
-    { id: 11, type: 'image', category: 'SOCIAL EVENTS', src: 'https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?auto=format&fit=crop&q=80&w=1200', span: 1 },
-    { id: 12, type: 'image', category: 'CULINARY ART', src: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&q=80&w=1200', span: 1 },
+    }
   ];
 
   const filteredItems = galleryItems.filter(item => 
@@ -144,10 +143,11 @@ const Gallery: React.FC = () => {
             >
               {item.type === 'image' && (
                 <>
-                  <img 
-                    src={item.src} 
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                    alt="Gallery" 
+                  <LazyImage
+                    src={item.src!}
+                    alt={item.category ?? 'Gallery image'}
+                    containerClassName="w-full h-full"
+                    imgClassName="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                     <div className="w-12 h-12 rounded-full bg-gold/90 text-alchemist-950 flex items-center justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
