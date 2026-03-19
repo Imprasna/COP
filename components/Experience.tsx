@@ -2,6 +2,8 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Armchair, Martini, Music2, Utensils } from 'lucide-react';
+import roomNb from '../assets/banners/room-nb.png';
+import Hero from '../assets/banners/hero.png';
 
 const Experience: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -112,10 +114,10 @@ const Experience: React.FC = () => {
         <div className="visual-cards-grid grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {/* Card 1: Main Lounge */}
           <div className="visual-card relative rounded-2xl overflow-hidden group cursor-pointer h-[400px] md:h-[500px]" style={{ clipPath: 'polygon(25% 0%, 100% 0, 100% 50%, 75% 100%, 0 100%, 0% 50%)', overflow: 'hidden' }}>
-            <img 
-              src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=800" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-              alt="The Main Lounge" 
+            <img
+              src={roomNb}
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+              alt="The Main Lounge"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             <div className="absolute bottom-8 left-8 space-y-1">
@@ -140,7 +142,7 @@ const Experience: React.FC = () => {
           {/* Card 3: The Bar */}
           <div className="visual-card relative rounded-2xl overflow-hidden group cursor-pointer h-[400px] md:h-[500px]" style={{ clipPath: 'polygon(25% 0%, 100% 0, 100% 50%, 75% 100%, 0 100%, 0% 50%)', overflow: 'hidden' }}>
             <img 
-              src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=600" 
+              src={Hero} 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
               alt="The Bar" 
             />

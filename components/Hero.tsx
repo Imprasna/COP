@@ -1,6 +1,7 @@
 
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import heroImg from '../assets/banners/hero.png';
 
 interface HeroProps {
   title: string;
@@ -38,9 +39,9 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
   return (
     <section ref={containerRef} className="relative h-[80vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div 
-          className="hero-bg w-full h-[120%] bg-cover bg-center absolute top-[-10%]" 
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=2070')" }}
+        <div
+          className="hero-bg w-full h-[120%] bg-cover bg-center absolute top-[-10%]"
+          style={{ backgroundImage: `url(${heroImg})` }}
         />
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-alchemist-950/20 via-alchemist-950/40 to-alchemist-950"></div>

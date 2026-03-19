@@ -1,6 +1,16 @@
 
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import menuBanner from '../assets/banners/menu.png';
+import food1 from '../assets/menu/food_001.webp';
+import food2 from '../assets/menu/food_002.webp';
+import food3 from '../assets/menu/food_003.webp';
+import food4 from '../assets/menu/food_004.webp';
+import drink1 from '../assets/menu/drink_001.webp';
+import drink2 from '../assets/menu/drink_002.webp';
+import drink3 from '../assets/menu/drink_003.webp';
+import drink4 from '../assets/menu/drink_004.webp';
+import drink5 from '../assets/menu/drink_005.webp';
 
 const MenuList: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -15,13 +25,13 @@ const MenuList: React.FC = () => {
           name: 'Makhmali Chicken Tikka',
           price: '₹499',
           desc: 'Silky chicken tikka with creamy yogurt, almond paste & aromatic spices.',
-          img: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&q=80&w=200'
+          img: food2
         },
         {
           name: 'Penne Alfredo',
           price: '₹449',
           desc: 'Creamy Alfredo pasta with garlic, butter & parmesan cheese.',
-          img: 'https://images.unsplash.com/photo-1612874742237-6526221fcf4e?auto=format&fit=crop&q=80&w=200'
+          img: food3
         },
         {
           name: 'Pan Seared Prawns',
@@ -35,49 +45,49 @@ const MenuList: React.FC = () => {
           name: 'Californian Beef Burger',
           price: '₹549',
           desc: 'Premium beef patty with avocado, bacon & cheddar on a brioche bun.',
-          img: 'https://images.unsplash.com/photo-1568901346375-23c9450549e1?auto=format&fit=crop&q=80&w=200'
+          img: food1
         },
         {
-          name: 'Wine & Cheese Platter (Standard)',
-          price: '₹699',
+          name: 'Wine & Cheese Platter (Premium)',
+          price: '₹799',
           desc: 'Curated selection of cheeses, charcuterie & artisanal crackers.',
-          img: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=200'
+          img: food4
         }
       ]
     },
     DRINKS: {
       left: [
         {
-          name: 'Gold-Dusted Old Fashioned',
-          price: '₹599',
+          name: 'Jose Cuervo Silver',
+          price: '₹449',
           desc: 'Smoky bourbon, sugar, bitters, finished with a gold dust rim.',
-          img: 'https://images.unsplash.com/photo-1541687272231-2b9b1f4a1b0d?auto=format&fit=crop&q=80&w=200'
+          img: drink5
         },
         {
-          name: 'Champagne Spritz',
-          price: '₹499',
+          name: 'Kissing Concoction',
+          price: '₹949',
           desc: 'Light, effervescent blend of champagne, citrus & a touch of herbal liqueur.',
-          img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=200'
+          img: drink2
         },
         {
-          name: 'Herbal Negroni',
-          price: '₹549',
-          desc: 'Gin, herbal vermouth & bitter liqueur with a citrus twist.',
-          img: 'https://images.unsplash.com/photo-1532634896-26909d0d5b25?auto=format&fit=crop&q=80&w=200'
+          name: 'Wolfsbane',
+          price: '₹949',
+          desc: 'Gin , Grapefruit , Lime , Tonic',
+          img: drink4
         }
       ],
       right: [
         {
-          name: 'Signature Espresso Martini',
-          price: '₹449',
-          desc: 'Vodka, coffee liqueur & fresh espresso — bold, smooth, refined.',
-          img: 'https://images.unsplash.com/photo-1526318472351-c75fcf070f5d?auto=format&fit=crop&q=80&w=200'
+          name: 'Elixir Of Life',
+          price: '₹949',
+          desc: 'Jose’ Cuervo , Pomo Pearls , Grenadine , Litchi , Lime',
+          img: drink3
         },
         {
-          name: 'House Red (Glass)',
-          price: '₹349',
+          name: 'Ballantine’s Finest Scotch',
+          price: '₹399',
           desc: 'Selected sommelier red, pairs beautifully with rich mains.',
-          img: 'https://images.unsplash.com/photo-1514361892638-7fc6ec1f2f22?auto=format&fit=crop&q=80&w=200'
+          img: drink1
         }
       ]
     }
@@ -106,6 +116,10 @@ const MenuList: React.FC = () => {
   return (
     <section ref={sectionRef} className="py-20 px-6 lg:px-20 bg-alchemist-950">
       <div className="max-w-6xl mx-auto">
+
+        <div className="w-full h-44 md:h-64 mb-12 overflow-hidden rounded-lg">
+          <img src={menuBanner} alt="Menu banner" className="w-full h-full object-cover" />
+        </div>
 
         {/* Categories removed (no tabs) */}
 

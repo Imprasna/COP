@@ -32,14 +32,90 @@ const MenuHighlights: React.FC<MenuHighlightsProps> = ({ onSeeFullMenu }) => {
   }, []);
 
   const dishes = [
-    { name: 'Wine & Cheese Platter (Premium)', price: '₹799', desc: 'Aged cheeses, cured meats, wine pairings, artisanal crackers', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&q=80&w=500' },
-    { name: 'Butter Chicken Masala', price: '₹549', desc: 'Tender chicken in creamy tomato-butter sauce with aromatic spices', img: 'https://images.unsplash.com/photo-1565557623814-695d8edf5b0b?auto=format&fit=crop&q=80&w=500' },
-    { name: 'Gamberoni Alla Marinara (Prawn Pizza)', price: '₹599', desc: 'Fresh prawns, garlic, tomato sauce, basil & mozzarella', img: 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&q=80&w=500' },
-    { name: 'Old Fashioned Tiramisu', price: '₹449', desc: 'Classic Italian dessert with espresso, mascarpone & cocoa', img: 'https://images.unsplash.com/photo-1571877227200-c0gae3a37be?auto=format&fit=crop&q=80&w=500' },
-    { name: 'Wine & Cheese Platter (Premium)', price: '₹799', desc: 'Aged cheeses, cured meats, wine pairings, artisanal crackers', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&q=80&w=500' },
-    { name: 'Butter Chicken Masala', price: '₹549', desc: 'Tender chicken in creamy tomato-butter sauce with aromatic spices', img: 'https://images.unsplash.com/photo-1565557623814-695d8edf5b0b?auto=format&fit=crop&q=80&w=500' },
-    { name: 'Gamberoni Alla Marinara (Prawn Pizza)', price: '₹599', desc: 'Fresh prawns, garlic, tomato sauce, basil & mozzarella', img: 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&q=80&w=500' },
-    { name: 'Old Fashioned Tiramisu', price: '₹449', desc: 'Classic Italian dessert with espresso, mascarpone & cocoa', img: 'https://images.unsplash.com/photo-1571877227200-c0gae3a37be?auto=format&fit=crop&q=80&w=500' },
+    {
+      name: 'Crème di Fungi (Creamy Mushroom Soup)',
+      price: '₹349',
+      desc: 'Rich and velvety mushroom soup finished with a savory bacon garnish',
+      img: 'https://images.pexels.com/photos/29653178/pexels-photo-29653178.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: "Gillyweed Caesar's (Caesar Salad)",
+      price: '₹399',
+      desc: 'Crisp romaine lettuce tossed with classic Caesar dressing, crunchy croutons, and parmesan',
+      img: 'https://images.pexels.com/photos/33674388/pexels-photo-33674388.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Schezwan Style Chilly Paneer',
+      price: '₹429',
+      desc: 'Wok-tossed paneer cubes in a spicy, bold Schezwan sauce with peppers and onions',
+      img: 'https://images.pexels.com/photos/29631461/pexels-photo-29631461.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Butter Chicken Masala',
+      price: '₹549',
+      desc: 'Tender chicken pieces simmered in a creamy, aromatic tomato and butter gravy',
+      img: 'https://images.pexels.com/photos/9609844/pexels-photo-9609844.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Kongu Nadu Mutton Biriyani',
+      price: '₹649',
+      desc: 'Authentic regional biryani slow-cooked with succulent mutton and traditional spices',
+      img: 'https://images.pexels.com/photos/33947401/pexels-photo-33947401.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Bufalina Pizza (Margherita)',
+      price: '₹499',
+      desc: 'Classic wood-fired pizza topped with fresh tomato sauce, buffalo mozzarella, and basil',
+      img: 'https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Beer Battered Fish & Chips',
+      price: '₹599',
+      desc: 'Crispy golden beer-battered fish served with thick-cut fries and tartar sauce',
+      img: 'https://images.pexels.com/photos/2966196/pexels-photo-2966196.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Makhmali Chicken Tikka',
+      price: '₹479',
+      desc: 'Silky smooth chicken skewers marinated in cream and mild spices, served with mint chutney',
+      img: 'https://images.pexels.com/photos/29173114/pexels-photo-29173114.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Chettinad Mutton Sukka',
+      price: '₹579',
+      desc: 'Dry-roasted bone-in mutton tossed in a fiery blend of hand-ground Chettinad spices',
+      img: 'https://images.pexels.com/photos/9609846/pexels-photo-9609846.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Burmese Style Khao Suey',
+      price: '₹529',
+      desc: 'Fragrant coconut milk noodle soup served with boiled egg, fresh herbs, and condiments',
+      img: 'https://images.pexels.com/photos/28907756/pexels-photo-28907756.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Creamy Butter Garlic Prawns',
+      price: '₹629',
+      desc: 'Fresh prawns sautéed in a rich garlic butter sauce, served in a traditional clay pot',
+      img: 'https://images.pexels.com/photos/16273763/pexels-photo-16273763.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Kurkuri Paneer',
+      price: '₹389',
+      desc: 'Crunchy, deep-fried paneer cubes served with a zesty signature dipping sauce',
+      img: 'https://images.pexels.com/photos/9646858/pexels-photo-9646858.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Tres Leches Cake',
+      price: '₹349',
+      desc: 'A light sponge cake soaked in three kinds of milk, topped with whipped cream',
+      img: 'https://images.pexels.com/photos/32590852/pexels-photo-32590852.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      name: 'Hot Fudge Brownie',
+      price: '₹299',
+      desc: 'Warm chocolate brownie smothered in rich melted chocolate sauce',
+      img: 'https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg'
+    }
   ];
 
   return (
@@ -53,12 +129,12 @@ const MenuHighlights: React.FC<MenuHighlightsProps> = ({ onSeeFullMenu }) => {
             <span className="text-gold uppercase tracking-[0.3em] font-bold text-xs mb-4 block">Curated Taste</span>
             <h2 className="text-4xl md:text-5xl font-bold font-display text-white">Menu Highlights</h2>
           </div>
-          <button 
+          <button
             onClick={onSeeFullMenu}
             className="flex items-center gap-2 group text-white/70 hover:text-white transition-colors font-medium text-sm tracking-wider uppercase"
           >
             View Full Menu
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
           </button>
         </div>
 
