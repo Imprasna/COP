@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-white font-bold tracking-widest uppercase text-xs mb-2">Location</h4>
-                <p className="text-white/60 font-light">123 Alchemist Lane, Noir District<br />London, EC1A 1BB</p>
+                <p className="text-white/60 font-light">Plot: C10, Ravilla Towers, Anna Nagar 3rd Main Rd,<br /> W Block, Anna Nagar, Chennai, Tamil Nadu 600040</p>
               </div>
             </div>
 
@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-white font-bold tracking-widest uppercase text-xs mb-2">Email</h4>
-                <p className="text-white/60 font-light">elixir@luxnoir.com<br />events@luxnoir.com</p>
+                <p className="text-white/60 font-light"><a href="mailto:copanr2025@gmail.com" className="hover:text-gold transition-colors">copanr2025@gmail.com</a></p>
               </div>
             </div>
 
@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-white font-bold tracking-widest uppercase text-xs mb-2">Phone</h4>
-                <p className="text-white/60 font-light">+44 (0) 20 7946 0123</p>
+                <p className="text-white/60 font-light"><a href="tel:+91 93601 36063" className="mb-0 hover:text-gold transition-colors">+91 93601 36063</a></p>
               </div>
             </div>
           </div>
